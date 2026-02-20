@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mechanism product checker</title>
+
+  <!-- JSME (local files in your repo) -->
+  <script src="./jsme/jsme.nocache.js"></script>
+
+  <!-- OpenChemLib JS (browser bundle via CDN) -->
+  <script src="https://unpkg.com/openchemlib@8.3.0/dist/openchemlib-full.js"></script>
+  <!-- (If you prefer a different version, you can change it; this is just a pinned example.) :contentReference[oaicite:3]{index=3} -->
+
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 16px; }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 14px; }
+    .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+    .col { flex: 1 1 360px; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #bbb; background: #fff; cursor: pointer; }
+    button:hover { background: #f6f6f6; }
+    .msg { margin-top: 12px; padding: 10px 12px; border-radius: 10px; border: 1px solid #ddd; white-space: pre-wrap; }
+    .muted { opacity: 0.8; }
+    .pill { display:inline-block; padding:2px 8px; border:1px solid #ddd; border-radius:999px; font-size:0.9em; }
+    a { color: inherit; }
+  </style>
+
+  <script src="./tasks.js"></script>
+  <script src="./app.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <h2 id="title">Mechanism product checker</h2>
+
+    <div class="card">
+      <div class="row">
+        <div class="col">
+          <div class="muted">
+            Task: <span id="taskNo" class="pill"></span>
+          </div>
+          <p><b>Formula:</b> <span id="formula"></span></p>
+          <p><b>Stereochemistry:</b> <span id="stereoReq"></span></p>
+          <p id="prompt" class="muted"></p>
+
+          <p class="muted">
+            Tip: open task links like
+            <a href="?task=1">?task=1</a>, <a href="?task=2">?task=2</a>, … <a href="?task=10">?task=10</a>
+          </p>
+        </div>
+
+        <div class="col">
+          <div id="jsme_container"></div>
+
+          <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button onclick="checkAnswer()">Check</button>
+            <button onclick="clearDrawing()">Clear</button>
+          </div>
+
+          <div id="msg" class="msg" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
