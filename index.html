@@ -40,9 +40,20 @@
     let currentTask = null;
 
     function getTaskId() {
-      const params = new URLSearchParams(location.search);
-      const n = parseInt(params.get("task") || "1", 10);
-      return (Number.isFinite(n) && window.TASKS[n]) ? n : 1;
+      // Try query string first: ?task=2
+      const qs = new URLSearchParams(window.location.search);
+      let raw = qs.get("task");
+
+      // Fallback to hash: #task=2  (or #task=2&x=y)
+      if (!raw && window.location.hash) {
+        const h = window.location.hash.replace(/^#/, "");
+        const hs = new URLSearchParams(h);
+        raw = hs.get("task");
+      }
+
+      const n = Number(raw);
+      if (Number.isInteger(n) && window.TASKS && window.TASKS[n]) return n;
+      return 1;
     }
 
     function initializePage() {
