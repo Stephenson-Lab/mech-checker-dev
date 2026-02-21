@@ -34,6 +34,35 @@
     button:hover { background: #f2f2f2; }
     .msg { margin-top: 12px; padding: 12px; border-radius: 8px; border: 1px solid #ddd; white-space: pre-wrap; }
     .muted { opacity: 0.8; }
+    /* --- Logo header styling --- */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .logo {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+  .app-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.85;
+  }
+
+  .task-title {
+    margin: 2px 0 0 0;
+  }
   </style>
 
   <script>
@@ -150,7 +179,13 @@
 
 <body>
   <div class="wrap">
-    <h2 id="title">Mechanism Product Checker</h2>
+    <div class="header">
+      <img src="./assets/logo.png" alt="Dr Stephenson's Mech-Checker" class="logo">
+      <div class="header-text">
+        <div class="app-name">Dr Stephenson’s Mech-Checker</div>
+          <h2 id="title" class="task-title">Question</h2>
+        </div>
+    </div\>
 
     <div class="card">
       <div class="row">
