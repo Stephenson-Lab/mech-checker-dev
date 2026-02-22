@@ -2,8 +2,8 @@
 // answersSmiles can contain multiple acceptable products.
 window.TASKS = {
   1: {
-  title: "How to Use Mech-Checker - Practice: Draw benzene",
-  formula: "C6H6",
+  title: "How to Use Mech-Checker - Practice: Draw benzoic acid",
+  formula: "C7H6O2",
   requireStereo: false,
   prompt: `How to Use Mech-Checker
 
@@ -22,7 +22,7 @@ Click “Clear” to remove the feedback message (this does not delete your stru
 The tool evaluates your response against the expected answer for the task, checking molecular formula, bonding connectivity, and stereochemistry (where required).
 
 You may attempt the activity multiple times. This tool is intended for formative practice only.`,
-  answersSmiles: ["c1ccccc1"]
+  answersSmiles: ["O=C(O)c1ccccc1"]
 },
   2: { title: "Mechanism activity 2", formula: "C7H7BrO",  requireStereo: false, prompt: "", answersSmiles: ["O=Cc1cccc(Br)c1"] },
   3: { title: "Mechanism activity 3", formula: "C8H9Cl",   requireStereo: true,  prompt: "", answersSmiles: ["CC[C@H](Cl)c1ccccc1"] },
