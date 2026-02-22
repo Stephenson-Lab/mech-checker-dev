@@ -17,6 +17,10 @@ Users who adopt or adapt this tool should review updates periodically and test c
 ### A Browser-Based Molecular Structure Input and Validation Tool  
 Designed for Blackboard Ultra and LMS Integration
 
+## Version Description
+
+This repository contains the simplest implementation of Mech-Checker. It is designed for embedding within a Blackboard Ultra Document via an iframe, with the question prompt provided separately in a preceding content block. The application validates the structure drawn by the student against the criteria defined in `tasks.js`, checking molecular formula, connectivity, and (where specified) stereochemistry. It is intended for straightforward formative structure verification rather than mechanism grading or advanced interaction.
+
 ---
 
 ## Purpose and Scope
