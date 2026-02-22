@@ -25,21 +25,77 @@
   <script src="./tasks.js"></script>
 
   <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 20px; }
-    .wrap { max-width: 1000px; margin: auto; }
-    .card { border: 1px solid #ddd; border-radius: 12px; padding: 20px; }
-    .row { display: flex; gap: 20px; flex-wrap: wrap; }
-    .col { flex: 1 1 400px; }
-    button { padding: 10px 16px; border-radius: 8px; border: 1px solid #bbb; background: #fff; cursor: pointer; }
-    button:hover { background: #EAEAEA; }
-    .msg { margin-top: 12px; padding: 12px; border-radius: 8px; border: 1px solid #ddd; white-space: pre-wrap; }
-    .muted { opacity: 0.8; }
-    .task-title { margin-top: 0; margin-bottom: 16px; color: #AE0000; font-weight: 600}
-    /* --- Logo header styling --- */
-    .header { display: flex; align-items: center; gap: 16px; margin-bottom: 0px; }
-    .logo { height: 165px; width: auto; display: block; }
-    .header-text { display: flex; flex-direction: column; line-height: 1.1; }
-  </style>
+  body {
+    font-family: system-ui, Arial, sans-serif;
+    margin: 20px;
+  }
+
+  .wrap {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    flex: 1 1 400px;
+  }
+
+  button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #EAEAEA;
+  }
+
+  .msg {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+  }
+
+  .muted {
+    opacity: 0.8;
+  }
+
+  .task-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #8B0000;
+    font-weight: 600;
+  }
+
+  /* Logo header styling */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    height: 165px;
+    width: auto;
+    display: block;
+  }
+</style>
 
   <script>
     let currentTask = null;
