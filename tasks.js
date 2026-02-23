@@ -24,7 +24,7 @@ The tool evaluates your response against the expected answer for the task, check
 You may attempt the activity multiple times. This tool is intended for formative practice only.`,
   answersSmiles: ["O=C(O)c1ccccc1"]
 },
-  2: { title: "Mechanism activity 2", formula: "C7H7BrO",  requireStereo: false, prompt: "", answersSmiles: ["O=Cc1cccc(Br)c1"] },
+  2: { title: "CHE-4101B - Q1", formula: "C4H8O2",  requireStereo: false, prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCOC(C)=O"] },
   3: { title: "Mechanism activity 3", formula: "C8H9Cl",   requireStereo: true,  prompt: "", answersSmiles: ["CC[C@H](Cl)c1ccccc1"] },
   4: { title: "Mechanism activity 4", formula: "C9H10O",   requireStereo: false, prompt: "", answersSmiles: ["CCc1cccc(O)c1"] },
   5: { title: "Mechanism activity 5", formula: "C6H11Br",  requireStereo: true,  prompt: "", answersSmiles: ["C[C@H](Br)CCCC"] },
