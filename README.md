@@ -24,7 +24,7 @@ Designed for Blackboard Ultra and LMS Integration
 
 ## Version Description
 
-This repository contains the simplest implementation of Mech-Checker. It is designed for embedding within a Blackboard Ultra Document via an iframe, with the question prompt provided separately in a preceding content block. The application validates the structure drawn by the student against the criteria defined in `tasks.js`, checking molecular formula, connectivity, and (where specified) stereochemistry. It is intended for straightforward formative structure verification rather than mechanism grading or advanced interaction.
+This repository contains the simplest implementation of Mech-Checker (Meck-Checker-light). It is designed for embedding within a Blackboard Ultra Document via an iframe, with the question prompt provided separately in a preceding content block. The application validates the structure drawn by the student against the criteria defined in `tasks.js`, checking molecular formula, connectivity, and (where specified) stereochemistry. It is intended for straightforward formative structure verification rather than mechanism grading or advanced interaction.
 
 ---
 
