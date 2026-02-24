@@ -25,9 +25,9 @@ You may attempt the activity multiple times. This tool is intended for formative
   answersSmiles: ["O=C(O)c1ccccc1"]
 },
   2: { title: "CHE-4101B - Q1", formula: "C4H8O2",  requireStereo: false, prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCOC(C)=O"] },
-  3: { title: "CHE-4101B - Q2", formula: "C4H8O2",   requireStereo: true,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCC(=O)OC"] },
-  4: { title: "CHE-4101B - Q3", formula: "C11H12O3",   requireStereo: true,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCOC(=O)c1ccc(C(C)=O)cc1"] },
-  5: { title: "Mechanism activity 5", formula: "C6H11Br",  requireStereo: true,  prompt: "", answersSmiles: ["C[C@H](Br)CCCC"] },
+  3: { title: "CHE-4101B - Q2", formula: "C4H8O2",   requireStereo: false,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCC(=O)OC"] },
+  4: { title: "CHE-4101B - Q3", formula: "C11H12O3",   requireStereo: false,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCOC(=O)c1ccc(C(C)=O)cc1"] },
+  5: { title: "CHE-4101B - Q4", formula: "C9H8O3",   requireStereo: false,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["COC(=O)c1ccc(C=O)cc1"] },
   6: { title: "Mechanism activity 7", formula: "C8H8O2",    requireStereo: false, prompt: "", answersSmiles: ["O=C(O)c1cccc(C)c1"] },
   7: { title: "Mechanism activity 8", formula: "C4H7Br",    requireStereo: true,  prompt: "", answersSmiles: ["C/C=C/[C@H](Br)C"] },
   8: { title: "Mechanism activity 9", formula: "C9H12",     requireStereo: false, prompt: "", answersSmiles: ["CCc1ccc(CC)cc1"] },
