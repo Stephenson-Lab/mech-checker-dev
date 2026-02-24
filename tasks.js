@@ -26,17 +26,16 @@ You may attempt the activity multiple times. This tool is intended for formative
 },
   2: { title: "CHE-4101B - Q1", formula: "C4H8O2",  requireStereo: false, prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCOC(C)=O"] },
   3: { title: "CHE-4101B - Q2", formula: "C4H8O2",   requireStereo: true,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCC(=O)OC"] },
-  4: { title: "Mechanism activity 4", formula: "C9H10O",   requireStereo: false, prompt: "", answersSmiles: ["CCc1cccc(O)c1"] },
+  4: { title: "CHE-4101B - Q3", formula: "C11H12O3",   requireStereo: true,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCOC(=O)c1ccc(C(C)=O)cc1"] },
   5: { title: "Mechanism activity 5", formula: "C6H11Br",  requireStereo: true,  prompt: "", answersSmiles: ["C[C@H](Br)CCCC"] },
-
-  // Example of multiple acceptable answers (e.g., racemate accepted):
-  6: { title: "Mechanism activity 6", formula: "C5H10O",    requireStereo: true,  prompt: "Either enantiomer acceptable.", answersSmiles: [
+  6: { title: "Mechanism activity 7", formula: "C8H8O2",    requireStereo: false, prompt: "", answersSmiles: ["O=C(O)c1cccc(C)c1"] },
+  7: { title: "Mechanism activity 8", formula: "C4H7Br",    requireStereo: true,  prompt: "", answersSmiles: ["C/C=C/[C@H](Br)C"] },
+  8: { title: "Mechanism activity 9", formula: "C9H12",     requireStereo: false, prompt: "", answersSmiles: ["CCc1ccc(CC)cc1"] },
+  9:{ title: "Mechanism activity 10",formula: "C7H6O",     requireStereo: false, prompt: "", answersSmiles: ["O=Cc1ccccc1"] }
+  
+   // Example of multiple acceptable answers (e.g., racemate accepted):
+  10: { title: "This question hasn't been set up yet", formula: "C5H10O",    requireStereo: true,  prompt: "Either enantiomer acceptable.", answersSmiles: [
       "C[C@H](O)CCC",  // replace with real
       "C[C@@H](O)CCC"
     ]},
-
-  7: { title: "Mechanism activity 7", formula: "C8H8O2",    requireStereo: false, prompt: "", answersSmiles: ["O=C(O)c1cccc(C)c1"] },
-  8: { title: "Mechanism activity 8", formula: "C4H7Br",    requireStereo: true,  prompt: "", answersSmiles: ["C/C=C/[C@H](Br)C"] },
-  9: { title: "Mechanism activity 9", formula: "C9H12",     requireStereo: false, prompt: "", answersSmiles: ["CCc1ccc(CC)cc1"] },
-  10:{ title: "Mechanism activity 10",formula: "C7H6O",     requireStereo: false, prompt: "", answersSmiles: ["O=Cc1ccccc1"] }
 };
