@@ -31,7 +31,7 @@ You may attempt the activity multiple times. This tool is intended for formative
   6: { title: "CHE-4101B - Q5", formula: "C15H24O3",   requireStereo: false,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CC(C)Oc1cc(OC(C)C)cc(OC(C)C)c1"] },
   7: { title: "CHE-4101B - Q6", formula: "C10H12O3",   requireStereo: false,  prompt: "Deduce the structure from the simulate proton NMR spectrum and the IR spectrum provided on Blackboard", answersSmiles: ["COc1c(C)cc(C(=O)O)cc1C"] },
   8: { title: "CHE-4101B - Q7", formula: "C8H10O2",   requireStereo: false,  prompt: "Deduce the structure from the simulate proton NMR spectrum and the IR spectrum provided on Blackboard", answersSmiles: ["COc1ccc(CO)cc1"] },
-  9:{ title: "Mechanism activity 10",formula: "C7H6O",     requireStereo: false, prompt: "", answersSmiles: ["O=Cc1ccccc1"] },  
+  9: { title: "CHE-4101B - Q8", formula: "C4H8O2",   requireStereo: false,  prompt: "Deduce the structure from the simulate proton NMR spectrum and the IR spectrum provided on Blackboard", answersSmiles: ["C1COCCO1"] },  
    // Example of multiple acceptable answers (e.g., racemate accepted):
   10: { title: "This question hasn't been set up yet", formula: "C5H10O",    requireStereo: true,  prompt: "Either enantiomer acceptable.", answersSmiles: [
       "C[C@H](O)CCC",  // replace with real
