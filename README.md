@@ -161,7 +161,7 @@ https://stephenson-lab.github.io/mech-checker-light/?task=11
 To embed within a Blackboard Ultra Document:
 
 <iframe
-  src="https://stephenson-lab.github.io/mech-checker/?task=1"
+  src="https://stephenson-lab.github.io/mech-checker-light/?task=1"
   width="100%"
   height="820"
   style="border:1px solid #ccc; border-radius:12px;"
