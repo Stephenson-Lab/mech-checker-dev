@@ -1,4 +1,4 @@
-# Mech-Checker (A Chemical Structure Answer Checker)
+# Mech-Checker-light (A Chemical Structure Answer Checker)
 ### A Browser-Based Molecular Structure Input and Validation Tool
 Designed for Blackboard Ultra and LMS Integration
 
