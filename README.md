@@ -100,7 +100,7 @@ All questions are defined in:
 
 tasks.js
 
-Each question follows this structure:
+Each question follows this structure (or the single line equivalent - see tasks.js for more examples):
 
 window.TASKS = {
   1: {
@@ -130,7 +130,7 @@ Expected molecular formula. Must match the calculated formula of the correct str
 Optional instructional text shown to students.
 
 **answersSmiles**  
-An array of acceptable SMILES strings.  
+An array of acceptable SMILES strings (**Best acquired from the JSME editor itseft at https://jsme-editor.github.io/dist/JSME_test.html - see export smiles at the bottom of the page**).  
 Multiple entries may be included to allow equivalent or alternative correct answers (e.g., enantiomers).
 
 ---
@@ -152,7 +152,7 @@ To add Question 11:
 
 3. Access via:
 
-https://stephenson-lab.github.io/mech-checker/?task=11
+https://stephenson-lab.github.io/mech-checker-light/?task=11
 
 ---
 
