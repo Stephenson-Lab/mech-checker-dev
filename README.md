@@ -168,7 +168,9 @@ To embed within a Blackboard Ultra Document:
   title="Chemical Structure Answer Checker – Question 1">
 </iframe>
 
-Each question should be embedded separately using its corresponding task number.
+NB:
+
+**Each question should be embedded separately using its corresponding task number.**
 
 ---
 
