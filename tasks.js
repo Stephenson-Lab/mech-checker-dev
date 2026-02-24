@@ -29,7 +29,7 @@ You may attempt the activity multiple times. This tool is intended for formative
   4: { title: "CHE-4101B - Q3", formula: "C11H12O3",   requireStereo: false,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CCOC(=O)c1ccc(C(C)=O)cc1"] },
   5: { title: "CHE-4101B - Q4", formula: "C9H8O3",   requireStereo: false,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["COC(=O)c1ccc(C=O)cc1"] },
   6: { title: "CHE-4101B - Q5", formula: "C15H24O3",   requireStereo: false,  prompt: "Deduce the structure from the simulated spectra provided on Blackboard", answersSmiles: ["CC(C)Oc1cc(OC(C)C)cc(OC(C)C)c1"] },
-  7: { title: "Mechanism activity 8", formula: "C4H7Br",    requireStereo: true,  prompt: "", answersSmiles: ["C/C=C/[C@H](Br)C"] },
+  7: { title: "CHE-4101B - Q6", formula: "C10H12O3",   requireStereo: false,  prompt: "Deduce the structure from the simulate proton NMR spectrum and the IR spectrum provided on Blackboard", answersSmiles: ["COc1c(C)cc(C(=O)O)cc1C"] },
   8: { title: "Mechanism activity 9", formula: "C9H12",     requireStereo: false, prompt: "", answersSmiles: ["CCc1ccc(CC)cc1"] },
   9:{ title: "Mechanism activity 10",formula: "C7H6O",     requireStereo: false, prompt: "", answersSmiles: ["O=Cc1ccccc1"] },  
    // Example of multiple acceptable answers (e.g., racemate accepted):
