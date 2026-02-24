@@ -80,7 +80,7 @@ No backend services, databases, or authentication systems are used.
 
 Base URL:
 
-https://stephenson-lab.github.io/mech-checker/
+https://stephenson-lab.github.io/mech-checker-light/
 
 To open a specific question, append:
 
@@ -88,7 +88,7 @@ To open a specific question, append:
 
 Example:
 
-https://stephenson-lab.github.io/mech-checker/?task=2
+https://stephenson-lab.github.io/mech-checker-light/?task=2
 
 Important: The equals sign is required (`?task=2`, not `?task2`).
 
