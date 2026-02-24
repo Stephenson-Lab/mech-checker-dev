@@ -38,4 +38,8 @@ You may attempt the activity multiple times. This tool is intended for formative
       "CC#[O+]",  // replace with real
       "C[C+]=O"
     ]},
+  12: { title: "CHE-4101B - Q11", formula: "C7H7",    requireStereo: true,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 91 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: [
+      "c1ccc[cH+]cc1",  // replace with real
+      "[CH2+]c1ccccc1"
+    ]},
 };
