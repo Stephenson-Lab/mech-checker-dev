@@ -1,3 +1,8 @@
+# Mech-Checker (A Chemical Structure Answer Checker)
+### A Browser-Based Molecular Structure Input and Validation Tool
+Designed for Blackboard Ultra and LMS Integration
+
+
 ## Disclaimer
 
 This tool was developed for use in the author's own teaching and has been tested only within that specific instructional context.
