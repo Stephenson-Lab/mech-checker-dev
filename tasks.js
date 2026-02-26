@@ -34,11 +34,11 @@ You may attempt the activity multiple times. This tool is intended for formative
   9: { title: "CHE-4101B - Q8", formula: "C4H8O2",   requireStereo: false,  prompt: "Deduce the structure from the simulate proton NMR spectrum and the IR spectrum provided on Blackboard", answersSmiles: ["C1COCCO1"] },
   10: { title: "CHE-4101B - Q9", formula: "C5H10O",   requireStereo: false,  prompt: "Deduce the structure from the simulate proton NMR spectrum and the IR spectrum provided on Blackboard", answersSmiles: ["CCC(=O)CC"] },
    // Example of multiple acceptable answers (e.g., racemate accepted):
-  11: { title: "CHE-4101B - Q10", formula: "C2H3O",    requireStereo: true,  prompt: "Deduce the structure of the fragment ion likely to be producing the base peak in the EI-Mass spectrum provided on Blackboard.", answersSmiles: [
+  11: { title: "CHE-4101B - Q10", formula: "C2H3O",    requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the base peak in the EI-Mass spectrum provided on Blackboard.", answersSmiles: [
       "CC#[O+]",  // replace with real
       "C[C+]=O"
     ]},
-  12: { title: "CHE-4101B - Q11", formula: "C7H7",    requireStereo: true,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 91 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: [
+  12: { title: "CHE-4101B - Q11", formula: "C7H7",    requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 91 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: [
       "c1ccc[cH+]cc1",  // replace with real
       "[CH2+]c1ccccc1"
     ]},
