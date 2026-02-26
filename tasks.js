@@ -45,4 +45,5 @@ You may attempt the activity multiple times. This tool is intended for formative
   13: { title: "CHE-4101B - Q12", formula: "C3H5",   requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 41 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: ["C=C[CH2+]"] },
   14: { title: "CHE-4101B - Q13", formula: "C5H11",   requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 71 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: ["CCCC[CH2+]"] },
   15: { title: "CHE-4101B - Q14", formula: "C6H13",   requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 85 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: ["CCC[C+](C)C"] },
+  16: { title: "CHE-4101B - Q15", formula: "C3H7O",   requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 85 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: ["CC[O+]=C"] },
 };
