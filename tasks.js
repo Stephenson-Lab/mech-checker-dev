@@ -43,4 +43,5 @@ You may attempt the activity multiple times. This tool is intended for formative
       "[CH2+]c1ccccc1"
     ]},
   13: { title: "CHE-4101B - Q12", formula: "C3H5",   requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 41 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: ["C=C[CH2+]"] },
+  14: { title: "CHE-4101B - Q13", formula: "C5H11",   requireStereo: false,  prompt: "Deduce the structure of the fragment ion likely to be producing the peak at 71 m/z in the EI-Mass spectrum provided on Blackboard.", answersSmiles: ["CCCC[CH2+]"] },
 };
