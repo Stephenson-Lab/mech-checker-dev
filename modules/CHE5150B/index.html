@@ -160,7 +160,7 @@
         return;
       }
 
-      // Use the first accepted answer to generate the expected formula automatically
+      // Use accepted answer smiles to generate the expected formula automatically
       const expectedMol = OCL.Molecule.fromSmiles(currentTask.answersSmiles[0]);
       const expectedFormula = expectedMol.getMolecularFormula().formula;
 
