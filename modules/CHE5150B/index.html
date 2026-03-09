@@ -126,7 +126,9 @@
       currentTask = window.TASKS[taskId];
 
       document.getElementById("title").textContent = currentTask.title;
-      document.getElementById("formula").textContent = currentTask.formula;
+      const expectedMol = OCL.Molecule.fromSmiles(currentTask.answersSmiles[0]);
+      document.getElementById("formula").textContent =
+        expectedMol.getMolecularFormula().formula;
       document.getElementById("prompt").textContent = currentTask.prompt || "";
       document.getElementById("stereoReq").textContent =
         currentTask.requireStereo ? "Required" : "Ignored";
