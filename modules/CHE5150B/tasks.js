@@ -26,4 +26,5 @@ You may attempt the activity multiple times. This tool is intended for formative
 },
   2: { title: "CHE-5150B - Q1", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "What is the structure of the missing product or intermediate on Blackboard?", answersSmiles: ["FCOC([C@@H](NC(CC1=CC=CC=C1)=O)[C@@H]2N[C@@H](C([O-])=O)C(C)(C)S2)=O"] },
   3: { title: "CHE-5150B - Q1", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Draw the structure of the pencillin with the added fluorine atom?", answersSmiles: ["CC1(C)[C@H](C(O)=O)N2C([C@@H](NC([C@@H](F)C3=CC=CC=C3)=O)[C@H]2S1)=O"] },
+  4: { title: "CHE-5150B - Q1", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "What is the structure of the missing product or intermediate on Blackboard?", answersSmiles: ["OC(C(NC(C1=CC=C(N([H])CC2N(CC3C(SCF)N([C@H]4C[C@H](O)[C@@H](COP([O-])([O-])=O)O4)C(NC3=O)=O)C5=C(NC2)NC(N)=NC5=O)C=C1)=O)CCC(O)=O)=O"] },
 };
