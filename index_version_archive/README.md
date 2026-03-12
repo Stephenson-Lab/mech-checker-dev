@@ -1,7 +1,8 @@
 ## A directory to archive index files for different versions of Mech-Checker
-index_v1 = The orginal Mech-checker it is used in the root
 
-index_v2 = First update
+index_v1 = The orginal Mech-checker it is used in the root (No compatible Taskbuilder anxillary tool) 
+
+index_v2 = First update (Compatible with Taskbuider V2 anxillary tool)
 
 **updates in v2**
 **Index <script> update removes issue of formulas not matching due to different order of elements**
