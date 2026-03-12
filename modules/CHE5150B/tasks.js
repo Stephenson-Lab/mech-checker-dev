@@ -34,5 +34,5 @@ You may attempt the activity multiple times. This tool is intended for formative
   9: { title: "CHE-5150B - Q8", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Draw the full structure including your placement of the additional methyl group", answersSmiles: ["Cc3ccc(NC(=O)c2ccc(CN1CCN(C)CC1)cc2)cc3Nc5nccc(c4cccnc4)n5"] },
   10: { title: "CHE-5150B - Q10", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Edit", answersSmiles: [""] },
   11: { title: "CHE-5150B - Q11", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Edit", answersSmiles: [""] },
-  12: { title: "Test single line version", formula: "C45H47N7O", requireStereo: false, prompt: "Test single line version", answersSmiles: ["CN8CCN(Cc7ccc(C(=O)Nc6ccc(C1=C[C+]3(=CC=C1)C=C2CC[CH+]CCCC2=CC3)c(Nc5nccc(c4cccnc4)n5)c6)cc7)CC8"] },
+  12: { title: "Taskbuilder6 check", formula: "C45H47N7O", requireStereo: false, prompt: "single multp anser check", answersSmiles: ["CN8CCN(Cc7ccc(C(=O)Nc6ccc(C1=C[C+]3(=CC=C1)C=C2CC[CH+]CCCC2=CC3)c(Nc5nccc(c4cccnc4)n5)c6)cc7)CC8", "CN8CCN(Cc7ccc(C(=O)Nc6ccc(C1=C[C+]3(=CC=C1)C=C2CCCCCCC2=C[CH+]3)c(Nc5nccc(c4cccnc4)n5)c6)cc7)CC8"] },
 };
