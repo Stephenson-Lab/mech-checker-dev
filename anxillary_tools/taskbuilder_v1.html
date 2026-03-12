@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mech-Checker Task Builder</title>
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0;
+      background: #f7f7f8;
+      color: #1f2328;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: #8b0000;
+    }
+
+    p {
+      line-height: 1.45;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: start;
+    }
+
+    label {
+      font-weight: 600;
+      padding-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #cfcfcf;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 92px;
+      resize: vertical;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    button {
+      border: 2px solid #8b0000;
+      background: #fff;
+      color: #111;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #f4f4f4;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #fafafa;
+      border: 1px solid #e3e3e3;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 0;
+      overflow: auto;
+    }
+
+    .answers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .answer-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .answer-row button {
+      border-color: #666;
+      padding: 8px 12px;
+    }
+
+    .hint {
+      background: #fff8e1;
+      border: 1px solid #edd08b;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 12px;
+    }
+
+    .ok {
+      color: #106c2f;
+      font-weight: 600;
+    }
+
+    .muted {
+      color: #666;
+    }
+
+    .checks {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+
+    .checks label {
+      font-weight: 500;
+      padding-top: 0;
+    }
+
+    code {
+      background: #f3f3f3;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      label {
+        padding-top: 0;
+      }
+    }
+  </style>
+
+  <script>
+    function jsmeOnLoad() {
+      try {
+        window.jsmeNormaliserApplet = new JSApplet.JSME(
+          "jsme_normaliser",
+          "520px",
+          "380px",
+          {
+            options: "stereo,autoez,canonize"
+          }
+        );
+        window.jsmeReady = true;
+      } catch (err) {
+        console.error("JSME failed to initialise:", err);
+        window.jsmeReady = false;
+      }
+    }
+  </script>
+
+  <script src="https://jsme-editor.github.io/dist/jsme/jsme.nocache.js"></script>
+  <script src="https://unpkg.com/openchemlib@8.3.0/dist/openchemlib-full.js"></script>
+</head>
+<body>
+  <div
+    id="jsme_normaliser"
+    style="
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      width: 520px;
+      height: 380px;
+      opacity: 0;
+      pointer-events: none;
+    "
+  ></div>
+
+  <div class="wrap">
+    <h1>Mech-Checker Task Builder</h1>
+    <p class="muted">
+      Build entries for your current <code>task.js</code> schema only:
+      <code>title</code>, <code>formula</code>, <code>requireStereo</code>,
+      <code>prompt</code>, and <code>answersSmiles</code>.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="row">
+          <label for="taskId">Task number</label>
+          <input id="taskId" type="number" value="1" min="1" />
+        </div>
+
+        <div class="row">
+          <label for="title">Title</label>
+          <input id="title" type="text" placeholder="CHE-5150B - Q8" />
+        </div>
+
+        <div class="row">
+          <label for="prompt">Prompt</label>
+          <textarea
+            id="prompt"
+            placeholder="Draw the full structure including your placement of the additional methyl group"
+          ></textarea>
+        </div>
+
+        <div class="row">
+          <label>Options</label>
+          <div class="checks">
+            <label><input id="requireStereo" type="checkbox" /> Require stereochemistry</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="taskFormat">Task format</label>
+          <select id="taskFormat">
+            <option value="multi">Multi-line (recommended)</option>
+            <option value="single">Single-line</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="formula">Formula</label>
+          <input
+            id="formula"
+            type="text"
+            placeholder="Auto-generated from first answer after normalisation, or enter manually"
+          />
+        </div>
+
+        <div class="row">
+          <label>Accepted answer SMILES</label>
+          <div>
+            <div id="answers" class="answers-list"></div>
+            <div class="btns">
+              <button type="button" id="addAnswerBtn">Add answer</button>
+            </div>
+            <div class="small" style="margin-top:8px;">
+              Paste ChemDraw SMILES here if you like, then click
+              <em>Normalise answers</em> so the task is round-tripped through
+              OpenChemLib and JSME before being written out.
+            </div>
+          </div>
+        </div>
+
+        <div class="btns">
+          <button type="button" id="normaliseBtn">Normalise answers</button>
+          <button type="button" id="generateBtn">Generate task line</button>
+          <button type="button" id="copyBtn">Copy output</button>
+          <button type="button" id="resetBtn">Reset</button>
+        </div>
+
+        <div id="status" class="hint" style="display:none;"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0;">Output</h2>
+        <pre id="output">Fill in the form and click “Generate task line”.</pre>
+
+        <div class="hint">
+          <strong>Suggested workflow</strong><br />
+          1. Paste ChemDraw SMILES into the answer fields.<br />
+          2. Click <em>Normalise answers</em>.<br />
+          3. Check the formula auto-generated from the first answer.<br />
+          4. Choose single-line or multi-line output format.<br />
+          5. Click <em>Generate task line</em> and paste into <code>task.js</code>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const answersEl = document.getElementById("answers");
+    const outputEl = document.getElementById("output");
+    const statusEl = document.getElementById("status");
+
+    function showStatus(text, ok = false) {
+      statusEl.style.display = "block";
+      statusEl.innerHTML = ok ? '<span class="ok">' + text + "</span>" : text;
+    }
+
+    function clearStatus() {
+      statusEl.style.display = "none";
+      statusEl.textContent = "";
+    }
+
+    function escapeJsString(str) {
+      return String(str)
+        .replace(/\\/g, "\\\\")
+        .replace(/"/g, '\\"')
+        .replace(/\n/g, "\\n");
+    }
+
+    function addAnswer(value = "") {
+      const row = document.createElement("div");
+      row.className = "answer-row";
+
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Paste answer SMILES here";
+      input.value = value;
+
+      const removeBtn = document.createElement("button");
+      removeBtn.type = "button";
+      removeBtn.textContent = "Remove";
+      removeBtn.addEventListener("click", () => row.remove());
+
+      row.appendChild(input);
+      row.appendChild(removeBtn);
+      answersEl.appendChild(row);
+    }
+
+    function getAnswerInputs() {
+      return [...answersEl.querySelectorAll("input")];
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function getStableJsmeSmiles(applet, timeoutMs = 2000, pollMs = 30) {
+      const start = Date.now();
+      let previous = "";
+      let current = "";
+
+      while (Date.now() - start < timeoutMs) {
+        await sleep(pollMs);
+        current = applet.smiles().trim();
+
+        if (current && current === previous) {
+          return current;
+        }
+
+        previous = current;
+      }
+
+      return current || "";
+    }
+
+    async function normaliseSmiles(smiles) {
+      const mol = OCL.Molecule.fromSmiles(smiles);
+
+      // Preserve stereochemistry in the initial OpenChemLib export
+      const canonicalSmiles = mol.toIsomericSmiles();
+
+      const originalStereoID = OCL.CanonizerUtil.getIDCode(
+        mol,
+        OCL.CanonizerUtil.NORMAL
+      );
+
+      let finalSmiles = canonicalSmiles;
+      let stereoWarning = "";
+
+      if (window.jsmeReady && window.jsmeNormaliserApplet) {
+        window.jsmeNormaliserApplet.readGenericMolecularInput(canonicalSmiles);
+
+        const stableJsmeSmiles = await getStableJsmeSmiles(window.jsmeNormaliserApplet);
+
+        if (stableJsmeSmiles) {
+          finalSmiles = stableJsmeSmiles;
+        } else {
+          console.warn(
+            "JSME normalisation timed out; using OpenChemLib isomeric SMILES instead."
+          );
+        }
+      }
+
+      const finalMol = OCL.Molecule.fromSmiles(finalSmiles);
+
+      const finalStereoID = OCL.CanonizerUtil.getIDCode(
+        finalMol,
+        OCL.CanonizerUtil.NORMAL
+      );
+
+      if (originalStereoID !== finalStereoID) {
+        stereoWarning = "Warning: stereochemistry changed during normalisation.";
+        console.warn(stereoWarning, {
+          input: smiles,
+          canonicalSmiles,
+          finalSmiles
+        });
+      }
+
+      return {
+        smiles: finalSmiles,
+        formula: finalMol.getMolecularFormula().formula,
+        idStereo: finalStereoID,
+        idNoStereo: OCL.CanonizerUtil.getIDCode(
+          finalMol,
+          OCL.CanonizerUtil.NOSTEREO
+        ),
+        stereoWarning
+      };
+    }
+
+    async function buildTaskObject() {
+      const taskId = Number(document.getElementById("taskId").value || "1");
+      const title = document.getElementById("title").value.trim();
+      const prompt = document.getElementById("prompt").value.trim();
+      const requireStereo = document.getElementById("requireStereo").checked;
+      const taskFormat = document.getElementById("taskFormat").value;
+      const answers = getAnswerInputs().map(i => i.value.trim()).filter(Boolean);
+
+      if (!title) throw new Error("Please add a title.");
+      if (!prompt) throw new Error("Please add a prompt.");
+      if (answers.length === 0) throw new Error("Please add at least one answer SMILES.");
+
+      let formula = document.getElementById("formula").value.trim();
+      if (!formula) {
+        formula = (await normaliseSmiles(answers[0])).formula;
+      }
+
+      return {
+        taskId,
+        title,
+        prompt,
+        requireStereo,
+        taskFormat,
+        formula,
+        answers
+      };
+    }
+
+    function generateTaskLine(obj) {
+      const answers = obj.answers
+        .map(a => '"' + escapeJsString(a) + '"')
+        .join(", ");
+
+      if (obj.taskFormat === "single") {
+        return (
+          obj.taskId +
+          ': { title: "' + escapeJsString(obj.title) +
+          '", formula: "' + escapeJsString(obj.formula) +
+          '", requireStereo: ' + (obj.requireStereo ? "true" : "false") +
+          ', prompt: "' + escapeJsString(obj.prompt) +
+          '", answersSmiles: [' + answers + '] },'
+        );
+      }
+
+      const lines = [];
+      lines.push(obj.taskId + ": {");
+      lines.push('  title: "' + escapeJsString(obj.title) + '",');
+      lines.push('  formula: "' + escapeJsString(obj.formula) + '",');
+      lines.push("  requireStereo: " + (obj.requireStereo ? "true" : "false") + ",");
+      lines.push('  prompt: "' + escapeJsString(obj.prompt) + '",');
+      lines.push("  answersSmiles: [" + answers + "]");
+      lines.push("},");
+      return lines.join("\n");
+    }
+
+    document.getElementById("addAnswerBtn").addEventListener("click", () => addAnswer());
+
+    document.getElementById("normaliseBtn").addEventListener("click", async () => {
+      clearStatus();
+
+      try {
+        const inputs = getAnswerInputs();
+        if (inputs.length === 0) {
+          throw new Error("Please add at least one answer field first.");
+        }
+
+        let formula = "";
+        let normalisedCount = 0;
+        let hadStereoWarning = false;
+
+        for (let i = 0; i < inputs.length; i++) {
+          const input = inputs[i];
+          const raw = input.value.trim();
+          if (!raw) continue;
+
+          const info = await normaliseSmiles(raw);
+          input.value = info.smiles;
+
+          if (i === 0) {
+            formula = info.formula;
+          }
+
+          if (info.stereoWarning) {
+            hadStereoWarning = true;
+          }
+
+          normalisedCount += 1;
+        }
+
+        if (normalisedCount === 0) {
+          throw new Error("Please enter at least one SMILES before normalising.");
+        }
+
+        if (formula) {
+          document.getElementById("formula").value = formula;
+        }
+
+        if (hadStereoWarning) {
+          showStatus(
+            "Answers were normalised, but at least one answer changed stereochemistry during the round-trip. Please verify that structure manually."
+          );
+        } else if (window.jsmeReady) {
+          showStatus(
+            "Answers normalised successfully through OpenChemLib and JSME. Formula updated from the first answer.",
+            true
+          );
+        } else {
+          showStatus(
+            "Answers normalised through OpenChemLib, but JSME was not ready so no JSME round-trip was applied."
+          );
+        }
+      } catch (err) {
+        showStatus("Could not normalise one of the answers. " + err.message);
+      }
+    });
+
+    document.getElementById("generateBtn").addEventListener("click", async () => {
+      clearStatus();
+
+      try {
+        const obj = await buildTaskObject();
+        outputEl.textContent = generateTaskLine(obj);
+        showStatus("Task line generated.", true);
+      } catch (err) {
+        outputEl.textContent = "Error: " + err.message;
+        showStatus(err.message);
+      }
+    });
+
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(outputEl.textContent);
+        showStatus("Output copied to clipboard.", true);
+      } catch {
+        showStatus("Clipboard copy failed. You can still copy manually.");
+      }
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      document.getElementById("taskId").value = "1";
+      document.getElementById("title").value = "";
+      document.getElementById("prompt").value = "";
+      document.getElementById("requireStereo").checked = false;
+      document.getElementById("taskFormat").value = "multi";
+      document.getElementById("formula").value = "";
+      answersEl.innerHTML = "";
+      addAnswer();
+      outputEl.textContent = 'Fill in the form and click “Generate task line”.';
+      clearStatus();
+    });
+
+    addAnswer();
+  </script>
+</body>
+</html>
