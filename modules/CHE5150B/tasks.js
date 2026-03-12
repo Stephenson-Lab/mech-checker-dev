@@ -31,6 +31,6 @@ You may attempt the activity multiple times. This tool is intended for formative
   6: { title: "CHE-5150B - Q5", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Draw the structure of the missing product", answersSmiles: ["O=CC(C=CC=C1)=C1C(O)=O"] },
   7: { title: "CHE-5150B - Q6", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Draw the structure of the missing product", answersSmiles: ["O=C(O)[C@@H](NC(C)=O)[C@@H]1N=C(C(O)=O)C(CS1)=C"] },
   8: { title: "CHE-5150B - Q7", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Draw the structure of the missing intermediate - use F to represent R!", answersSmiles: ["O=C(O)[C@@H](/C(O1)=C/CO)N[C@H]1CC(OCF)=O"] },
-  9: { title: "CHE-5150B - Q8", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Draw the full structure including your placement of the additional methyl group", answersSmiles: ["CN1CCN(CC2=CC=C(C(NC3=CC=C(C)C(NC4=NC(C5=CN=CC=C5)=CC=N4)=C3)=O)C=C2)CC1"] },
+  9: { title: "CHE-5150B - Q8", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Draw the full structure including your placement of the additional methyl group", answersSmiles: ["Cc3ccc(NC(=O)c2ccc(CN1CCN(C)CC1)cc2)cc3Nc5nccc(c4cccnc4)n5"] },
   10: { title: "CHE-5150B - Q9", formula: "This field is defunct - now generated from smiles",  requireStereo: false, prompt: "Edit", answersSmiles: [""] },
 };
